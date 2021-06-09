@@ -43,7 +43,7 @@ function App() {
   useEffect(() => {getCountry()}, [])
 
   const getCountry = () => {
-    Axios.get("http://localhost:3001/country").then ((res) =>{
+    Axios.get("https://authtest111.herokuapp.com/country").then ((res) =>{
       const data = res.data
 
       setCity ([...data])
@@ -98,7 +98,7 @@ const submit = (event) => {
     setIsEmpty ('')
     setEmailErr('')
 
-    Axios.post("http://localhost:3001/create", formInfo).then ((res) => {
+    Axios.post("https://authtest111.herokuapp.com/create", formInfo).then ((res) => {
       // console.log ('данные отправлены с фронта')
       // console.log(res.data)
       if (res.data.code == "ER_DUP_ENTRY") {setAuthWrong('This user already exists') }
@@ -143,7 +143,7 @@ const submit = (event) => {
   }
     // console.log ('ауф', authInfo)
 
-  Axios.post("http://localhost:3001/auth",  authInfo).then ((res) => {
+  Axios.post("https://authtest111.herokuapp.com/auth",  authInfo).then ((res) => {
     console.log (res.data)
     
     if (res.data) {
