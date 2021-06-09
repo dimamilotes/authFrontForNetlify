@@ -100,7 +100,7 @@ const submit = (event) => {
 
     Axios.post("https://authtest111.herokuapp.com/create", formInfo).then ((res) => {
       // console.log ('данные отправлены с фронта')
-      // console.log(res.data)
+      console.log(res.data)
       if (res.data.code == "ER_DUP_ENTRY") {setAuthWrong('This user already exists') }
       else {
       
